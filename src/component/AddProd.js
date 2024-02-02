@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Card from "../UI/Card";
 import './AddProd.css';
 import Button from '../UI/Button';
+import OutputList from './OutputList';
 
 function AddProd(props){
     const [prodId, setProdId] = useState('');
@@ -25,7 +26,7 @@ function AddProd(props){
     const prodNameChangeHandler = (event) =>{
         setProdName(event.target.value);
     };
-
+    
     return(
         <Card className='input'>
             <form onSubmit={addProdHandler}>

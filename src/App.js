@@ -11,14 +11,21 @@ function App() {
       setProducts((prev)=>{
         return [...prev,{id:prodId,price:price,name:prodName}];
       });
-    }
+    };
+    const deleteItemHandler=(goalId)=>{
+        setProducts((prev)=>{
+          const updatedProd = prev.filter((item)=> item.id !== goalId);
+          return updatedProd;
+        });
+    };
+
   return (
-    <div>
+    <>
       <Header>Inventory Record</Header>
-      <AddProd onAddProd={addProdHandler} />
+      <AddProd onAddProd={addProdHandler}  />
       <Header>Products</Header>
-      <OutputList data={products} />
-    </div>
+      {products.length>0 && <OutputList data={products} onDelete={deleteItemHandler} />}
+    </>
   );
 }
 
