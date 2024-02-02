@@ -1,0 +1,17 @@
+.button {
+    font: inherit;
+    color: white;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+  }
+.add{
+  background: #002aff;
+  border: 1px solid #002aff;
+}
+.delete{
+  background: #ff0000;
+  border: 1px solid #ff0000;
+  float: right;
+  padding: 3px;
+  font-size: small;
+}
