@@ -9,10 +9,7 @@ function AddProd(props){
     const [prodName, setProdName] = useState('');
 
     const addProdHandler = (event) =>{
-        event.preventDefault();
-        
-        //write validation code
-
+        event.preventDefault(); 
         props.onAddProd(prodId,price,prodName);
         setProdId('');
         setPrice('');
@@ -28,6 +25,7 @@ function AddProd(props){
     const prodNameChangeHandler = (event) =>{
         setProdName(event.target.value);
     };
+    const inputNotFilled = prodId.trim().length==0 && price.trim().length==0&&prodName.trim().length==0;
     
     return(
         <Card className='input'>
@@ -38,7 +36,7 @@ function AddProd(props){
                 <input type='number' id='price' value={price} onChange={priceChangeHandler}/>
                 <label htmlFor='pname'>Product Name:</label>
                 <input type='text' id='pname' value={prodName} onChange={prodNameChangeHandler}/>
-                <Button btype="add" type="submit">Add Product</Button>
+                <Button btype="add" type="submit" disabled={inputNotFilled}>Add Product</Button>
             </form>
         </Card>
     );
