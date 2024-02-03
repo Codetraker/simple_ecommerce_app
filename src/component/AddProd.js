@@ -2,7 +2,6 @@ import React,{useState} from 'react';
 import Card from "../UI/Card";
 import './AddProd.css';
 import Button from '../UI/Button';
-import OutputList from './OutputList';
 
 function AddProd(props){
     const [prodId, setProdId] = useState('');
@@ -11,6 +10,9 @@ function AddProd(props){
 
     const addProdHandler = (event) =>{
         event.preventDefault();
+        
+        //write validation code
+
         props.onAddProd(prodId,price,prodName);
         setProdId('');
         setPrice('');
