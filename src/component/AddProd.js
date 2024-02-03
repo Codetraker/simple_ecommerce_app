@@ -25,7 +25,7 @@ function AddProd(props){
     const prodNameChangeHandler = (event) =>{
         setProdName(event.target.value);
     };
-    const inputFilled = prodId.trim()!=='' && price.trim()!=='' &&prodName.trim()!=='';
+    const inputFilled = prodId.trim()!=='' && price.trim()!=='' &&prodName.trim()!==''&& +prodId>0 && +price>0;
     
     return(
         <Card className='input'>
