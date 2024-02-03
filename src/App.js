@@ -40,8 +40,8 @@ function App() {
       <Header>Inventory Record</Header>
       <AddProd onAddProd={addProdHandler}  />
       <Header>Products</Header>
-      {products.length>0 && <OutputList data={products} onDelete={deleteItemHandler} />}
       {products.length==0 && <p className='emptyInventory'>Inventory is empty. Please add some product.</p>}
+      {products.length>0 && <OutputList data={products} onDelete={deleteItemHandler} />}
       <Header>Total Amount: Rs.{calculateTotalAmount().toFixed(2)}</Header>
     </>
   );
